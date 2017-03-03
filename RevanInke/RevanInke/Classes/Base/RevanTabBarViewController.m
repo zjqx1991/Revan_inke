@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    
     
     //加载自定义tabbar
     [self.tabBar addSubview:self.tabbarView];
