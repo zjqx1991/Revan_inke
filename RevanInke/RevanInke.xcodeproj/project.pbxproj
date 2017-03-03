@@ -18,6 +18,8 @@
 		0463FB051E6939F5003BA3D4 /* RevanShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463FB041E6939F5003BA3D4 /* RevanShowViewController.m */; };
 		0463FB081E693A03003BA3D4 /* RevanProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463FB071E693A03003BA3D4 /* RevanProfileViewController.m */; };
 		0463FB0B1E693B22003BA3D4 /* RevanTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463FB0A1E693B22003BA3D4 /* RevanTabbarView.m */; };
+		0463FB0F1E695AA4003BA3D4 /* RevanItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463FB0E1E695AA4003BA3D4 /* RevanItemButton.m */; };
+		04A167A81E696FE300B8A9BE /* RevanLiveShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A167A71E696FE300B8A9BE /* RevanLiveShowViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,10 @@
 		0463FB091E693B22003BA3D4 /* RevanTabbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevanTabbarView.h; sourceTree = "<group>"; };
 		0463FB0A1E693B22003BA3D4 /* RevanTabbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevanTabbarView.m; sourceTree = "<group>"; };
 		0463FB0C1E693D0C003BA3D4 /* RevanInke.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RevanInke.pch; sourceTree = "<group>"; };
+		0463FB0D1E695AA4003BA3D4 /* RevanItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevanItemButton.h; sourceTree = "<group>"; };
+		0463FB0E1E695AA4003BA3D4 /* RevanItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevanItemButton.m; sourceTree = "<group>"; };
+		04A167A61E696FE300B8A9BE /* RevanLiveShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevanLiveShowViewController.h; sourceTree = "<group>"; };
+		04A167A71E696FE300B8A9BE /* RevanLiveShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevanLiveShowViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 		0463FAEB1E69317A003BA3D4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				04A167A21E696F9500B8A9BE /* LiveShow */,
 				0463FAF91E6931EF003BA3D4 /* Base */,
 				0463FAF31E69317A003BA3D4 /* show */,
 				0463FAEF1E69317A003BA3D4 /* profile */,
@@ -194,12 +201,47 @@
 				0463FAFB1E693240003BA3D4 /* RevanTabBarViewController.m */,
 				0463FB091E693B22003BA3D4 /* RevanTabbarView.h */,
 				0463FB0A1E693B22003BA3D4 /* RevanTabbarView.m */,
+				0463FB0D1E695AA4003BA3D4 /* RevanItemButton.h */,
+				0463FB0E1E695AA4003BA3D4 /* RevanItemButton.m */,
 				0463FAFD1E693971003BA3D4 /* RevanNavViewController.h */,
 				0463FAFE1E693971003BA3D4 /* RevanNavViewController.m */,
 				0463FB001E69398B003BA3D4 /* RevanBaseViewController.h */,
 				0463FB011E69398B003BA3D4 /* RevanBaseViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		04A167A21E696F9500B8A9BE /* LiveShow */ = {
+			isa = PBXGroup;
+			children = (
+				04A167A31E696FCA00B8A9BE /* Controllers */,
+				04A167A41E696FCA00B8A9BE /* Models */,
+				04A167A51E696FCA00B8A9BE /* Views */,
+			);
+			path = LiveShow;
+			sourceTree = "<group>";
+		};
+		04A167A31E696FCA00B8A9BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04A167A61E696FE300B8A9BE /* RevanLiveShowViewController.h */,
+				04A167A71E696FE300B8A9BE /* RevanLiveShowViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04A167A41E696FCA00B8A9BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04A167A51E696FCA00B8A9BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +318,10 @@
 			files = (
 				0463FB081E693A03003BA3D4 /* RevanProfileViewController.m in Sources */,
 				0463FAF81E69317A003BA3D4 /* AppDelegate.m in Sources */,
+				04A167A81E696FE300B8A9BE /* RevanLiveShowViewController.m in Sources */,
 				0463FAD61E69309F003BA3D4 /* main.m in Sources */,
 				0463FB051E6939F5003BA3D4 /* RevanShowViewController.m in Sources */,
+				0463FB0F1E695AA4003BA3D4 /* RevanItemButton.m in Sources */,
 				0463FAFC1E693240003BA3D4 /* RevanTabBarViewController.m in Sources */,
 				0463FB021E69398B003BA3D4 /* RevanBaseViewController.m in Sources */,
 				0463FAFF1E693971003BA3D4 /* RevanNavViewController.m in Sources */,
@@ -440,6 +484,7 @@
 				0463FAEA1E69309F003BA3D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

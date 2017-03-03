@@ -9,7 +9,14 @@
 #ifndef RevanInke_pch
 #define RevanInke_pch
 
+#pragma mark - 屏幕宽/高
 #define RevanScreenWidth [UIScreen mainScreen].bounds.size.width
 #define RevanScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#pragma mark - 随机颜色
+/// 随机颜色
+#define RevanRGB [UIColor colorWithRed:arc4random_uniform(255) green:arc4random_uniform(255) blue:arc4random_uniform(255) alpha:1.0]
+/// 设置颜色
+#define Revangrba(r, g, b, a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:a]
 
 #endif /* RevanInke_pch */

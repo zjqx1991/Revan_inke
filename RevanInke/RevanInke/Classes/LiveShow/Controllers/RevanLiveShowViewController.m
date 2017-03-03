@@ -1,23 +1,22 @@
 //
-//  RevanBaseViewController.m
+//  RevanLiveShowViewController.m
 //  RevanInke
 //
 //  Created by 紫荆秋雪 on 2017/3/3.
 //  Copyright © 2017年 Revan. All rights reserved.
 //
 
-#import "RevanBaseViewController.h"
+#import "RevanLiveShowViewController.h"
 
-@interface RevanBaseViewController ()
+@interface RevanLiveShowViewController ()
 
 @end
 
-@implementation RevanBaseViewController
+@implementation RevanLiveShowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    self.view.backgroundColor = Revangrba(100, 100, 100, 1.0);
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
