@@ -108,6 +108,20 @@
    
 }
 
+// 在自定义UITabBar中重写以下方法，其中self.button就是那个希望被触发点击事件的按钮
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    // 把 点击的位置 转换 到 按钮身上
+    CGPoint liveBtnP = [self convertPoint:point toView:self.liveShowButton];
+    // 判断点击事件在不在按钮身上
+    if ([self.liveShowButton pointInside:liveBtnP withEvent:event]) {
+        return self.liveShowButton;
+    } else {
+        return [super hitTest:point withEvent:event];
+    }
+}
+
+
+
 #pragma mark - 懒加载
 - (NSArray *)btnNames {
     if (!_btnNames) {
@@ -125,6 +139,8 @@
 - (UIButton *)liveShowButton {
     if (!_liveShowButton) {
         _liveShowButton = [[UIButton alloc] init];
+//        _liveShowButton.frame = CGRectMake(0, 0, 100, 100);
+//        _liveShowButton.backgroundColor = [UIColor redColor];
         [_liveShowButton setImage:[UIImage imageNamed:@"tab_launch"] forState:UIControlStateNormal];
         [_liveShowButton addTarget:self action:@selector(tabbarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         _liveShowButton.tag = RevanItemTypeLiveShow;

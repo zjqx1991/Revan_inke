@@ -16,22 +16,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //设置UI界面
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 设置UI界面
+- (void)setupUI {
+    //1、背景图片
+    UIImageView *bgImageView = [[UIImageView alloc] init];
+    bgImageView.image = [UIImage imageNamed:@"bg_zbfx"];
+    bgImageView.frame = self.view.bounds;
+    [self.view addSubview:bgImageView];
+    //2、退下的按钮
+    UIButton *backButton = [[UIButton alloc] init];
+    [backButton setImage:[UIImage imageNamed:@"launch_close"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backButton];
+    
+    [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(bgImageView.mas_top);
+        make.right.mas_equalTo(bgImageView.mas_right);
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)backButtonClick {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
 
 @end

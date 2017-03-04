@@ -8,12 +8,15 @@
 
 #import "RevanTabBarViewController.h"
 #import "RevanNavViewController.h"
+#import "RevanLiveShowViewController.h"
 #import "RevanTabbarView.h"
 
 @interface RevanTabBarViewController ()<RevanTabbarViewDelegate>
 
 /** tabBarView */
 @property (nonatomic,strong) RevanTabbarView *tabbarView;
+/** 记录点击的Item */
+@property (nonatomic,assign) NSInteger keepIdx;
 
 @end
 
@@ -23,8 +26,12 @@
     [super viewDidLoad];
     //加载子控制器
     [self addChildVC];
+    //移除系统自带的tabbar
+    [self.tabBar removeFromSuperview];
+    //FIXME: 加入tabBar后，超出tabBar的按钮无法响应事件
+    //[self.tabBar addSubview:self.tabbarView];
     //加载自定义tabbar
-    [self.tabBar addSubview:self.tabbarView];
+    [self.view addSubview:self.tabbarView];
 }
 
 /** 加载子控制器 */
@@ -47,9 +54,24 @@
     
     if (itemType == RevanItemTypeLiveShow) {
         //直播入口
-        
+        RevanLiveShowViewController *liveshowVC = [[RevanLiveShowViewController alloc] init];
+        [self presentViewController:liveshowVC animated:YES completion:nil];
     } else {
-    
+        
+        NSInteger idx = itemType - RevanItemTypeShow;
+        if (self.keepIdx == idx) {
+            return;
+        }
+        //首先移除上一个nav
+        [self.childViewControllers[self.keepIdx].view removeFromSuperview];
+        //记录选中下标
+        self.keepIdx = idx;
+        //获取控制器
+        NSLog(@"%zd", idx);
+        RevanBaseViewController *vc = self.childViewControllers[idx];
+        NSLog(@"%@", [vc class]);
+//        vc.view.backgroundColor = RevanRGB;
+        [self.view insertSubview:vc.view belowSubview:self.tabbarView];
     }
 
 }
@@ -57,7 +79,7 @@
 #pragma mark - 控件懒加载
 - (RevanTabbarView *)tabbarView {
     if (!_tabbarView) {
-        _tabbarView = [[RevanTabbarView alloc] initWithFrame:CGRectMake(0, 0,                RevanScreenWidth,49)];
+        _tabbarView = [[RevanTabbarView alloc] initWithFrame:CGRectMake(0, RevanScreenHeight - 49, RevanScreenWidth,49)];
         _tabbarView.delegate = self;
     }
     return _tabbarView;
